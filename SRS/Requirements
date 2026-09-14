@@ -9,7 +9,7 @@ FR-02 (Execute Commands): When the rover receives a valid command, it should che
 
 FR-03 (Report Position): The rover should regularly provide its current location and movement information to Mission Control. This allows engineers to know where the rover is currently operating.
 
-FR-04 (Report Health Data): The rover should provide important health information, including remaining battery capacity, current temperature, and communication condition. 
+FR-04 (Report Health Data): The rover shall enter Safe Mode within 3 seconds when battery temperature exceeds the critical threshold or battery capacity falls below the defined emergency level.
 
 FR-05 (Safe Mode): The rover should continuously monitor its battery and temperature. If a dangerous temperature or critically low battery level is detected, it must automatically enter Safe Mode within 3 seconds.
 
@@ -27,11 +27,11 @@ FR-10 (Communication Recovery): A temporary communication problem should not sto
 
 NFR-01 (Performance): The system should normally complete command processing within 5 seconds after a command is received by the rover.
 
-NFR-02 (Security and Authorization): The system shall require authenticated and role-authorized operators before accepting rover commands. 
+NFR-02 (Security and Authorization): The system shall require authenticated and role-authorized operators before accepting rover commands.
 
 NFR-03 (Reliability):The system shall continue operating despite temporary communication interruptions.
 
-NFR-04 (Scalability): Mission Control should be able to communicate with and monitor at least 20 rovers at the same time without major performance problems.
+NFR-04 (Scalability): The system shall support at least 20 simultaneously connected rovers.
 
 NFR-05 (Communication Efficiency): The system shall use the available communication bandwidth efficiently.
 
