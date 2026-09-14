@@ -1,0 +1,47 @@
+# Mars-Rover-Mission-Control
+Requirements analysis for a Mars Rover Mission Control system, covering functional and non-functional requirements, emergency Safe Mode, multi-rover communication, command security, and requirement change requests.
+
+# Functional Requirements
+
+FR-01 (Send Commands): Mission Control operators should be able to send commands such as move forward, move backward, turn left, or turn right.
+
+FR-02 (Execute Commands): When the rover receives a valid command, it should check the command and perform the requested action. Invalid commands should not be executed.
+
+FR-03 (Report Position): The rover should regularly provide its current location and movement information to Mission Control. This allows engineers to know where the rover is currently operating.
+
+FR-04 (Report Health Data): The rover should provide important health information, including remaining battery capacity, current temperature, and communication condition. 
+
+FR-05 (Safe Mode): The rover should continuously monitor its battery and temperature. If a dangerous temperature or critically low battery level is detected, it must automatically enter Safe Mode within 3 seconds.
+
+FR-06 (Command Validation): Before sending or executing a command, the system should check whether the command is valid and whether the operator has permission to issue it. Any invalid or unauthorized command must be rejected.
+
+FR-07 (Command Status): After a command is sent, Mission Control should receive information showing whether the command was successfully executed, rejected, or failed. 
+
+FR-08 (Event Logging): The system should maintain a record of commands sent by operators and important rover events, such as Safe Mode activation or critical battery conditions. Each record should include the time and operator ID.
+
+FR-09 (Communication Failure Detection): The system should monitor the communication link and identify when communication with a rover is lost or interrupted. Mission Control should be informed when a communication problem occurs.
+
+FR-10 (Communication Recovery): A temporary communication problem should not stop the entire Mission Control system. When communication is restored, the system should continue monitoring the rover and process further commands safely.
+
+# Non-Functional Requirements
+
+NFR-01 (Performance): The system should normally complete command processing within 5 seconds after a command is received by the rover.
+
+NFR-02 (Security and Authorization): The system shall require authenticated and role-authorized operators before accepting rover commands. 
+
+NFR-03 (Reliability):The system shall continue operating despite temporary communication interruptions.
+
+NFR-04 (Scalability): Mission Control should be able to communicate with and monitor at least 20 rovers at the same time without major performance problems.
+
+NFR-05 (Communication Efficiency): The system shall use the available communication bandwidth efficiently.
+
+NFR-06 (Availability): Mission Control should continue providing important monitoring and control functions even when one rover has a communication problem.
+
+NFR-07 (Data Integrity): Information such as rover position, battery level, temperature, command status, and event records should not be incorrectly changed or corrupted.
+
+NFR-08 (Auditability): Important activities should be stored with information such as timestamp and operator ID. Engineers should be able to review these records when investigating an issue.
+
+NFR-09 (Safety): The system should support automatic safety actions when dangerous conditions such as critical battery levels or excessive temperature are detected.
+
+NFR-10 (Maintainability): The system should use a clear and organized design so engineers can fix errors, update communication features, or add support for new rovers without rebuilding the complete system.
+
